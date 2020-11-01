@@ -1,0 +1,16 @@
+-
+ name: install httpd
+ hosts: apache_server
+ tasks:
+  - name: install httpd*
+    yum: name=httpd state=latest
+  - name: httpd is running and enabled
+    service:
+      name: httpd
+      state: started
+      enabled: yes
+  - name: remove firewalld
+    package:
+      name: firewalld
+      state: absent
+ become: yes
