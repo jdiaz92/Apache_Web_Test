@@ -1,10 +1,11 @@
 -
-  name: Copy git 
+  name: Copy git
   hosts: apache_server_2
   tasks:
-  become: yes  
-  sudo: yes
-  - name: Download html files
-    copy:
-        src: /var/lib/jenkins/workspace/Invoke_Ansible_Playbook/index.html
-        dest: /var/www/html/
+   - name: Download html files
+     copy:
+      src: /var/lib/jenkins/workspace/Invoke_Ansible_Playbook/index.html
+      dest: /var/www/html/
+  Sudo: yes
+  Become: yes
+  
