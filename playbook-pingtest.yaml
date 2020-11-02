@@ -1,6 +1,6 @@
 -
  name: Check connectivity to target servers
- hosts: apache_server
+ hosts: apache_server_2
  become: yes
  tasks:
   - name: Ping test
