@@ -2,11 +2,11 @@
   - hosts: apache_server_2
     become: yes
     tasks:
-      - name: Copy MOTD into place
+      - name: Copy html file
         copy:
           dest: /var/www/html
-          src: /Users/jonathandiaz/documents/aws/ansible/ansible-interview-demo/index.html
-      - name: Copy CSS
+          src: /var/lib/jenkins/workspace/Invoke_Ansible_Playbook/index.html
+      - name: Copy CSS file
         copy:
           dest: /var/www/html
-          src: /Users/jonathandiaz/documents/aws/ansible/ansible-interview-demo/style.css      
+          src: /var/lib/jenkins/workspace/Invoke_Ansible_Playbook/style.css    
