@@ -1,6 +1,6 @@
 -
  name: install httpd
- hosts: apache_server
+ hosts: apache_server_2
  tasks:
   - name: install httpd*
     yum: name=httpd state=latest
