@@ -1,5 +1,5 @@
 ---
-- name: Deploy Apache Website
+- name: install httpd
   hosts: apache_server
   become: yes
   tasks:
@@ -17,8 +17,8 @@
     - name: Copy html file to Apache web directory
       copy:
         dest: /var/www/html
-        src: /var/lib/jenkins/workspace/Invoke_Ansible_Playbook/index.html
+        src: /var/lib/jenkins/workspace/Deploy_Apache_Website/index.html
     - name: Copy CSS file to Apache web directory
       copy:
         dest: /var/www/html
-        src: /var/lib/jenkins/workspace/Invoke_Ansible_Playbook/style.css
+        src: /var/lib/jenkins/workspace/Deploy_Apache_Website/style.css
