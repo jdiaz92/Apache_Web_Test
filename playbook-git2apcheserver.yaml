@@ -1,11 +1,12 @@
--
-  name: Copy git
-  hosts: apache_server_2
-  tasks:
-   - name: Download html files
-     copy:
-      src: /var/lib/jenkins/workspace/Invoke_Ansible_Playbook/index.html
-      dest: /var/www/html/
-  Sudo: yes
-  Become: yes
-  
+---
+  - hosts: apache_server_2
+    become: yes
+    tasks:
+      - name: Copy MOTD into place
+        copy:
+          dest: /var/www/html
+          src: /Users/jonathandiaz/documents/aws/ansible/ansible-interview-demo/index.html
+      - name: Copy CSS
+        copy:
+          dest: /var/www/html
+          src: /Users/jonathandiaz/documents/aws/ansible/ansible-interview-demo/style.css      
